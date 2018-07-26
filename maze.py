@@ -18,7 +18,6 @@ maze = [[Cell(x, y) for y in range(height)] for x in range(width)]
 
 stack = [(0,0)]
 
-
 while len(stack) > 0:
     x, y = stack[-1]
 
@@ -58,15 +57,13 @@ while len(stack) > 0:
                 current.walls['left'] = False
                 hop.walls['right'] = False
 
-
 from PIL import Image
 
 def make_maze(width, height, mazelist):
-
     size_x = width*3 + 1
     size_y = height*3 +1
-    maze_png = Image.new('RGB', (size_x, size_y), color='white')
 
+    maze_png = Image.new('RGB', (size_x, size_y), color='white')
     pixels = maze_png.load()
 
     for x in range(width+1):
